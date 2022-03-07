@@ -80,7 +80,7 @@ function goBack() {
     backButton.classList.add('is-hidden')
     favoriteEl.removeAttribute('data-name')
     favoriteEl.removeAttribute('data-id')
-    currentIndex = 0;
+    // currentIndex = 0;
     previousBtn.classList.remove('is-hidden')
     nextBtn.classList.remove('is-hidden')
 }
@@ -138,6 +138,19 @@ function getMovieDetails(movieId) {
 function loadSearchResults (){
     previousBtn.classList.remove('is-hidden')
     nextBtn.classList.remove('is-hidden')
+    console.log(searchList.length,currentIndex,searchList.length-3===currentIndex,searchList.length<=3)
+    if (searchList.length<=3||(searchList.length-3===currentIndex)){
+        nextBtn.setAttribute('disabled',true)
+    }
+    else{
+        nextBtn.removeAttribute('disabled')
+    }
+    if (currentIndex===0 | searchList.length<=3){
+        previousBtn.setAttribute('disabled',true)
+    }
+    else{
+        previousBtn.removeAttribute('disabled')
+    }
     for (i = 0; i < 3; i++) {
                     
         // Makes cards clickable to get details
