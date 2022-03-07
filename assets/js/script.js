@@ -49,6 +49,9 @@ function searchVideos(selectedTitle, year, videoType) {
     searchResultsContainer.classList.add('is-hidden')
     mainContentContainer.classList.remove('is-hidden')
 
+    selectedTitle = selectedTitle.replaceAll(' ','%20')
+    selectedTitle = selectedTitle.replaceAll('&','%26')
+
     // Gets Youtube data
     fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=${selectedTitle} ${year} ${videoType}&key=${youtubeAPI}&type=video`)
         .then(function (res) {
@@ -201,7 +204,7 @@ function clearResults() {
 // Searches movie, hides back button and detail page(in case it was searched from detail page)
 function handleSubmit(event) {
     event.preventDefault()
-    movieTitle = movieInput.value
+    movieTitle = movieInput.value.trim()
     searchMovie(movieTitle)
     movieInput.value = ''
     mainContentContainer.classList.add('is-hidden')
