@@ -135,10 +135,7 @@ function getMovieDetails(movieId) {
         })
 }
 
-function loadSearchResults (){
-    previousBtn.classList.remove('is-hidden')
-    nextBtn.classList.remove('is-hidden')
-    console.log(searchList.length,currentIndex,searchList.length-3===currentIndex,searchList.length<=3)
+function checkDisabled(){
     if (searchList.length<=3||(searchList.length-3===currentIndex)){
         nextBtn.setAttribute('disabled',true)
     }
@@ -151,6 +148,13 @@ function loadSearchResults (){
     else{
         previousBtn.removeAttribute('disabled')
     }
+}
+
+function loadSearchResults (){
+    previousBtn.classList.remove('is-hidden')
+    nextBtn.classList.remove('is-hidden')
+    checkDisabled()
+    
     for (i = 0; i < 3; i++) {
                     
         // Makes cards clickable to get details
