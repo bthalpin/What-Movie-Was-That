@@ -12,7 +12,7 @@
 
 
 ## Deployed App
-[What Movie Was That](https://samif812.github.io/What-Movie-Was-That-/)
+[What Movie Was That](https://bthalpin.github.io/What-Movie-Was-That-/)
 
 
 ## Usage
