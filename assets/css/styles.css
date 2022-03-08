@@ -3,7 +3,13 @@
 }
 
 html {
+    height:100vh;
     background-color: #c3c3c3;
+    background-image: url('../images/theater.jpg');
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    
 }
 
 header {
@@ -14,6 +20,7 @@ header {
 header>div{
     position: relative;
 }
+
 
 
 .backButton {
@@ -34,7 +41,7 @@ header>div{
 
 /* Cards for search results */
 .searchresults .card{
-    min-height: 700px;
+    min-height: 580px;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
     background-color: #e6e6e6;
@@ -42,7 +49,10 @@ header>div{
 .searchresults .card:hover {
     transform: scale(1.05);
 }
-
+#searchbar{
+    width:30vw;
+    min-width: 150px;
+}
 /* All posters */
 .image img {
     max-width: 300px;
