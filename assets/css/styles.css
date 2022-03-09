@@ -160,12 +160,6 @@ iframe{
     }
 }
 
-@media screen and (max-height:400px) {
-    html{
-        background-position: 0 -50px;
-    }
-}
-
 
 
 
